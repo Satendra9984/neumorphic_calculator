@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(
+    // for the state notifier provider at the root level Widget
     ProviderScope(
       child: MyApp(),
     ),

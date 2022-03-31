@@ -7,32 +7,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class ButtonList extends StatelessWidget {
   const ButtonList({Key? key}) : super(key: key);
 
-  // void onClicked(String buttonText) {
-  //   // print('pressing ' + buttonText + '\n');
-  //   final calculator;
-  //   switch (buttonText) {
-  //     case 'AC':
-  //       calculator.reset();
-  //       break;
-  //     case '=':
-  //       calculator.equals();
-  //       break;
-  //     case '<':
-  //       calculator.delete();
-  //       break;
-  //     default:
-  //       calculator.append(buttonText);
-  //       break;
-  //   }
-  // }
-
   // function that builds a row of neon_buttons
   Widget buildButtonRow(
       String first, String second, String third, String fourth) {
     final row = [first, second, third, fourth];
 
     return Expanded(
-      // so that row can fit in the availble horizontal space
+      // so that row can fit in the available horizontal space
       child: Consumer(
         builder: (context, ref, child) {
           final calc = ref.read(calculatorProvider);
@@ -43,8 +24,6 @@ class ButtonList extends StatelessWidget {
                 .map(
                   (element) => NeoButton(
                     buttonText: element,
-                    // onClick: calc.onClicked,
-                    // onLongTap: (){}
                   ),
                 )
                 .toList(),

@@ -1,11 +1,9 @@
 import 'package:calculator_with_local_db/provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:state_notifier/state_notifier.dart';
-// import 'package:calculator_with_local_db/provider/provider.dart';
-
 import '../provider/provider.dart';
 
+// this widget will display the result i.e., equation and result
 final firstStringProvider = Provider((ref) => 'First');
 
 class CalculationResult extends StatelessWidget {
@@ -23,6 +21,8 @@ class CalculationResult extends StatelessWidget {
           bottomRight: Radius.circular(30),
         ),
       ),
+      // consumer widget for the reference of the StateNotifierProvider
+      // here we only read the data
       child: Consumer(
         builder: (context, ref, child) {
           // final stat = ref.watch(calculatorProvider);
@@ -42,7 +42,6 @@ class CalculationResult extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 48,
                   color: Colors.grey.shade900,
-                  // fontWeight: FontWeight.bold,
                   height: 1,
                 ),
               ),
